@@ -43,18 +43,18 @@ function getTextView(req, res)
 {
 	res.header("Access-Control-Allow-Origin", "*");
 	let id = req.params.id;
-	TextViewLibrary.findById(id, (error, book) =>
+	TextViewLibrary.findById(id, (error, textview) =>
 	{
 		if(error)
 		{
 			return res.status(500).send({message: `error al realizar la peticiòn: ${error}`});
 		}
-		else if(!book)
+		else if(!textview)
 		{
 			return res.status(404).send({message: `El libro no existe`});	
 		}else
 		{
-			return res.status(200).send({book})
+			return res.status(200).send({textview})
 		}
 	});
 }
