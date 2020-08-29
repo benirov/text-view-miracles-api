@@ -8,7 +8,7 @@ const api = express.Router();
 /*  Routes of books with api */
 
 
-api.get('/textview/:start', textviewController.getTextViews); 
+api.get('/textviews/:start', textviewController.getTextViews); 
 
 api.get('/textview/getbyid:id', textviewController.getTextView);
 
