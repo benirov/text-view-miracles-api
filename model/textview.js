@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt-nodejs')
 
 var Schema = mongoose.Schema,
 ObjectId = Schema.ObjectId;
-const bookModel = schema
+const TextViewModel = schema
 (
 	{
 		_id: ObjectId,
@@ -21,4 +21,4 @@ const bookModel = schema
 	}
 );
 
-module.exports = mongoose.model('Book', bookModel);
+module.exports = mongoose.model('Poema', TextViewModel);
