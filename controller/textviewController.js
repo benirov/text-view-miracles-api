@@ -9,7 +9,7 @@ function getTextViews(req, res)
 	let Start =  req.params.start || 1;
 	//let End =  req.params.end;
 	
-	TextViewLibrary.find({}, (error, book) =>
+	TextViewLibrary.find({}, (error, textview) =>
 	{
 		if(error)
 		{
@@ -26,7 +26,7 @@ function getTextViews(req, res)
 				{
 					return res.status(200).send(
 						{
-							book,
+							textview,
 							current: Start,
 							pages: Math.ceil(countP / perPage)
 						
