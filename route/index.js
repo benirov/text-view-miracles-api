@@ -10,7 +10,7 @@ const api = express.Router();
 
 api.get('/textviews/:start', textviewController.getTextViews); 
 
-api.get('/textview/getbyid:id', textviewController.getTextView);
+api.get('/textview/getbyid/:id', textviewController.getTextView);
 
 
 
