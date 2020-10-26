@@ -35,7 +35,7 @@ function getTextViews(req, res)
 			});
 		}
 		
-	}).skip((perPage * Start) - perPage).limit(perPage);
+	}).skip((perPage * Start) - perPage).limit(perPage).sort({"order":-1});
 }
 
 
