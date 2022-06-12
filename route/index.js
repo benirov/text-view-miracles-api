@@ -12,7 +12,7 @@ const api = express.Router();
 api.get('/textviews/:start', textviewController.getTextViews); 
 
 api.get('/textview/getbyid/:id', textviewController.getTextView);
-api.get('/textview/filter/:search', textviewController.getTextViewFilter);
+api.get('/textviews/filter/:search', textviewController.getTextViewFilter);
 api.post('/suggestion', SuggestionController.suggestion);
 
 
