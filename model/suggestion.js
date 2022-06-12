@@ -5,19 +5,13 @@ const schema = mongoose.Schema;
 
 var Schema = mongoose.Schema,
 ObjectId = Schema.ObjectId;
-const TextViewModel = schema
-(
-	{
+const SuggestionModel = schema({
 		_id: ObjectId,
-		id: Number,
 		title: String,
 		timestamp: Date,
-		texto: String,
+		description: String,
 		author: String,
-		genero: String,
-		image: String,
-		Comentarios: Array,
-	}
-);
+		email: String,
+	});
 
-module.exports = mongoose.model('Poema', TextViewModel);
+module.exports = mongoose.model('Suggestion', SuggestionModel);

@@ -7,10 +7,6 @@ const config = require('./config');
 
 
 
-console.log("config.port", config.port);
-
-console.log('config.db', config.db);
-console.log('config.port', config.port);
 mongoose.connect(config.db, (error, res) =>
 {
 	if (error)
