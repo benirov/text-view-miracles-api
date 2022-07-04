@@ -1,4 +1,4 @@
-![alt text](https://github.com/benirov/text-miracles-react-native/blob/main/preview/preview.png?raw=true)
+![alt text](https://github.com/benirov/text-view-miracles-api/blob/main/preview/preview.png?raw=true)
 
 # Text Miracles API
 
