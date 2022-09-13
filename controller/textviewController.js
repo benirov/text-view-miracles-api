@@ -29,7 +29,7 @@ function getTextViews(req, res){
 
 function getTextView(req, res){
 
-	res.header("Access-Control-Allow-Origin", "*");
+	
 	let id = req.params.id;
 	TextViewLibrary.findById(id, (error, textview) =>{
 		if(error){
@@ -44,15 +44,26 @@ function getTextView(req, res){
 }
 
 function getTextViewFilter(req, res){
-	res.header("Access-Control-Allow-Origin", "*");
-	let filterString = req.params.search;
+	let filterString = req.params.query;
+	let authors = req.params.authors;
+	let genres = req.params.genres;
+	
 	let filter = { $or: [{ title: {'$regex': filterString, '$options': 'i'} }, { texto: {'$regex': filterString, '$options': 'i'} }, { author: {'$regex': filterString, '$options': 'i'} }] }
+	if(authors){
+		let autorsFind = authors.split(",");
+		filter.author = autorsFind;
+	}
+
+	if(genres){
+		let autorsFind = genres.split(",");
+		filter.genero = autorsFind;
+	}
 	TextViewLibrary.find(filter, (error, textview) =>{
 		if(error){
 			return res.status(500).send({message: `error al realizar la peticiòn: ${error}`});
 		}
 		else if(!textview){
-			return res.status(404).send({message: `Noexisten resultados`});	
+			return res.status(404).send({message: `No existen resultados`});	
 		}else{
 			return res.status(200).send({textview})
 		}
@@ -61,8 +72,12 @@ function getTextViewFilter(req, res){
 
 
 
+
+
+
+
 module.exports = {
 	getTextViews,
 	getTextView,
-	getTextViewFilter
+	getTextViewFilter,
 }
