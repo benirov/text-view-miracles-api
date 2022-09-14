@@ -14,4 +14,4 @@ const SuggestionModel = schema({
 		email: String,
 	});
 
-module.exports = mongoose.model('Suggestion', SuggestionModel);
+module.exports = mongoose.model('Suggestion', SuggestionModel, "Suggestion");
